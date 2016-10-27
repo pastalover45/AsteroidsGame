@@ -2,15 +2,88 @@
 public void setup() 
 {
   //your code here
+  size(1000, 750);
+  ship =new SpaceShip();
+   starfield = new Star[1000];
+  for(int i=0; i<1000;i++){
+    starfield[i] = new Star();
+  }
+
 }
 public void draw() 
 {
   //your code here
+  background(0);
+  ship.show();
+  ship.move();
+  
+
 }
-class SpaceShip //extends Floater  
+
+class SpaceShip extends Floater  
 {   
     //your code here
+public SpaceShip() {
+    
+    //corners
+    corners = 43;
+
+  //complete the worksheet and change the spaceship shap shaip 
+    int[] xS = {53,50,-9,-10,-10,-8,-6,-7,-9,-11,-12,-14,-15,-16,-18,-19,-21,-23,-25,-20,-20,-23,-23,-20,-20,-25,-23,-21,-19,-18,-16,-15,-14,-12,-11,-9,-7,-6,-8,-10,-10,-9,50};
+    int[] yS = {0 ,2 ,2 ,1  ,3  ,5 ,3 ,6 ,6 ,4  ,1  , 1 , 2 , 1 , 1 , 4 , 6 , 6 , 3 , 3 , 1 , 1 ,-1 ,-1 ,-3 ,-3 ,-6 ,-6 ,-4 ,-1 ,-1 ,-2 ,-1 ,-1 ,-4 ,-6,-6,-3,-5,-3 ,-1 ,-2,-2}; 
+    xCorners = xS; 
+    yCorners = yS;
+
+    //color
+    myColor = color(255,255,128);
+    //myCenter
+    myCenterX = 500;
+    myCenterY = 375;
+    //myDirection
+    myPointDirection= 270;
+    myDirectionX = 0;
+    myDirectionY =0;
+
+  }
+  public void setX(int x){myCenterX=x;}  
+  public int getX(){return (int)myCenterX;}
+  public void setY(int y){myCenterY=y;}   
+  public int getY(){return (int)myCenterY;}   
+  public void setDirectionX(double x){myDirectionX = x;}   
+  public double getDirectionX(){return myDirectionX;}   
+  public void setDirectionY(double y){myDirectionY = y;}   
+  public double getDirectionY(){return myDirectionY;}   
+  public void setPointDirection(int degrees){myPointDirection = degrees;}   
+  public double getPointDirection(){return myPointDirection;}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//NO TOUCHY TOUCHY
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
