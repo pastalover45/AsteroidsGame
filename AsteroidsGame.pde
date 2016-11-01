@@ -1,15 +1,23 @@
+SpaceShip ship;
+Star[] starfield;
+
+
+
 //your variable declarations here
 public void setup() 
 {
   //your code here
   size(1000, 750);
   ship =new SpaceShip();
+   
    starfield = new Star[1000];
   for(int i=0; i<1000;i++){
     starfield[i] = new Star();
   }
 
 }
+
+
 public void draw() 
 {
   //your code here
@@ -17,8 +25,16 @@ public void draw()
   ship.show();
   ship.move();
   
+ for(int i=0; i<1000;i++){
+  starfield[i].show();
+  starfield[i].move();
+  }
+
 
 }
+
+
+
 
 class SpaceShip extends Floater  
 {   
@@ -33,6 +49,7 @@ public SpaceShip() {
     int[] yS = {0 ,2 ,2 ,1  ,3  ,5 ,3 ,6 ,6 ,4  ,1  , 1 , 2 , 1 , 1 , 4 , 6 , 6 , 3 , 3 , 1 , 1 ,-1 ,-1 ,-3 ,-3 ,-6 ,-6 ,-4 ,-1 ,-1 ,-2 ,-1 ,-1 ,-4 ,-6,-6,-3,-5,-3 ,-1 ,-2,-2}; 
     xCorners = xS; 
     yCorners = yS;
+
 
     //color
     myColor = color(255,255,128);
@@ -55,33 +72,74 @@ public SpaceShip() {
   public double getDirectionY(){return myDirectionY;}   
   public void setPointDirection(int degrees){myPointDirection = degrees;}   
   public double getPointDirection(){return myPointDirection;}
+}
 
+
+
+public void keyPressed(){
+
+  if(key == CODED){
+    if(keyCode == UP){ship.accelerate(0.9);}
+    if(keyCode == DOWN){ship.accelerate(-0.9);}
+    if(keyCode == LEFT){ship.rotate(-5);}
+    if(keyCode == RIGHT){ship.rotate(5);}
+
+ }
+
+ if(key == ENTER){ 
+  ship.setX((int)((Math.random())*1001)); 
+  ship.getX();
+  ship.setY((int)((Math.random())*1001));
+  ship.getY();
+
+  }
+}
+
+public void keyReleased() {
+
+  ship.setDirectionX(0);
+  ship.setDirectionY(0);
 }
 
 
 
 
 
+class Star
+{
+  private double sX,sY,sTheta,sSpeed;
+  private int sWH;
+ 
+  public Star(){
+    sX=500;
+    sY=375;
+    sTheta= Math.random()*2*Math.PI;
+    sSpeed= 8;
+    sWH= 1;
+
+  }
+
+  public void show(){
 
 
+    noStroke();
+    fill(255);
+    ellipse((float)sX,(float) sY, sWH, sWH);
 
+  }
 
+  public void move(){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    sX = sX+ Math.cos(sTheta)*sSpeed;
+    sY = sY+ Math.sin(sTheta)*sSpeed;
+    if(sX>1000||sX<0){
+      sX=500;
+    }
+    if(sY>750||sY<0){
+      sY=375;
+    }
+  }
+}
 
 //NO TOUCHY TOUCHY
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
