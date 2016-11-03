@@ -107,7 +107,6 @@ public void keyPressed(){
   ship.getX();
   ship.setY((int)((Math.random())*1000));
   ship.getY();
-
   }
 }
 
