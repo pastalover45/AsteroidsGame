@@ -7,7 +7,7 @@ Star[] starfield;
 public void setup() 
 {
   //your code here
-  size(1000, 750);
+  size(750,750);
   ship =new SpaceShip();
    
    starfield = new Star[1000];
@@ -42,13 +42,29 @@ class SpaceShip extends Floater
 public SpaceShip() {
     
     //corners
-    corners = 43;
+    corners = 6;
 
   //complete the worksheet and change the spaceship shap shaip 
-    int[] xS = {53,50,-9,-10,-10,-8,-6,-7,-9,-11,-12,-14,-15,-16,-18,-19,-21,-23,-25,-20,-20,-23,-23,-20,-20,-25,-23,-21,-19,-18,-16,-15,-14,-12,-11,-9,-7,-6,-8,-10,-10,-9,50};
-    int[] yS = {0 ,2 ,2 ,1  ,3  ,5 ,3 ,6 ,6 ,4  ,1  , 1 , 2 , 1 , 1 , 4 , 6 , 6 , 3 , 3 , 1 , 1 ,-1 ,-1 ,-3 ,-3 ,-6 ,-6 ,-4 ,-1 ,-1 ,-2 ,-1 ,-1 ,-4 ,-6,-6,-3,-5,-3 ,-1 ,-2,-2}; 
-    xCorners = xS; 
-    yCorners = yS;
+    // int[] xS = {1};
+    // int[] yS = {0,-7,17,0,17,7,0}; 
+    // xCorners = xS; 
+    // yCorners = yS;
+
+corners = 6;
+xCorners = new int[corners];
+yCorners = new int[corners];
+xCorners[0] = 15;
+yCorners[0] = 0;
+xCorners[1] = 0;
+yCorners[1] = -7;
+xCorners[2] = -7;
+yCorners[2] = -17;
+xCorners[3] = -13;
+yCorners[3] = 0;
+xCorners[4] = -7;
+yCorners[4] = 17;
+xCorners[5] = 0;
+yCorners[5] = 7;
 
 
     //color
@@ -115,7 +131,7 @@ class Star
     sY=375;
     sTheta= Math.random()*2*Math.PI;
     sSpeed= 8;
-    sWH= 1;
+    sWH= 2;
 
   }
 
@@ -132,8 +148,8 @@ class Star
 
     sX = sX+ Math.cos(sTheta)*sSpeed;
     sY = sY+ Math.sin(sTheta)*sSpeed;
-    if(sX>1000||sX<0){
-      sX=500;
+    if(sX>750||sX<0){
+      sX=375;
     }
     if(sY>750||sY<0){
       sY=375;
