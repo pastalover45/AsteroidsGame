@@ -68,7 +68,7 @@ yCorners[5] = 7;
 
 
     //color
-    myColor = color(255,255,128);
+    myColor = color(255,0,0);
     //myCenter
     myCenterX = 500;
     myCenterY = 375;
@@ -103,9 +103,9 @@ public void keyPressed(){
  }
 
  if(key == ENTER){ 
-  ship.setX((int)((Math.random())*1001)); 
+  ship.setX((int)((Math.random())*1000)); 
   ship.getX();
-  ship.setY((int)((Math.random())*1001));
+  ship.setY((int)((Math.random())*1000));
   ship.getY();
 
   }
@@ -116,7 +116,6 @@ public void keyReleased() {
   ship.setDirectionX(0);
   ship.setDirectionY(0);
 }
-
 
 
 
