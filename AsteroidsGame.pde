@@ -1,5 +1,6 @@
 SpaceShip ship;
 Star[] starfield;
+//ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
 
 
 
@@ -15,6 +16,9 @@ public void setup()
     starfield[i] = new Star();
   }
 
+  // for (int i= 0; i<(int)(Math.random()*10+10); i++) {
+
+  //   someAsteroids.add(new Asteroid());
 }
 
 
@@ -30,7 +34,10 @@ public void draw()
   starfield[i].move();
   }
 
-
+  //for(int i=0; i<someAsteroids.size();i++){
+    // someAsteroids.get(i).show();
+    // someAsteroids.get(i).move();
+      
 }
 
 
@@ -45,12 +52,7 @@ public SpaceShip() {
     corners = 6;
 
   //complete the worksheet and change the spaceship shap shaip 
-    // int[] xS = {1};
-    // int[] yS = {0,-7,17,0,17,7,0}; 
-    // xCorners = xS; 
-    // yCorners = yS;
 
-corners = 6;
 xCorners = new int[corners];
 yCorners = new int[corners];
 xCorners[0] = 15;
@@ -69,9 +71,11 @@ yCorners[5] = 7;
 
     //color
     myColor = color(255,0,0);
+
     //myCenter
     myCenterX = 500;
     myCenterY = 375;
+
     //myDirection
     myPointDirection= 270;
     myDirectionX = 0;
@@ -107,6 +111,11 @@ public void keyPressed(){
   ship.getX();
   ship.setY((int)((Math.random())*1000));
   ship.getY();
+  ship.setPointDirection((int)((Math.random())*360)); 
+  //ship.setDirectionX(0);
+  //ship.setDirectionY(0);
+
+
   }
 }
 
@@ -115,6 +124,67 @@ public void keyReleased() {
   ship.setDirectionX(0);
   ship.setDirectionY(0);
 }
+
+
+
+
+// class Asteroid extends Floater{
+
+//   private int asterRotation;
+//   public Asteroid(){
+
+//     corners=4;
+//     //change this according to graph paper
+//     int[] xS ={5,-15,-5,15};
+//     int[] xY ={5,15,-5,-15};
+//     xCorners = xS;
+//     yCorners = xY;
+
+//     myColor = color(128,128,128);
+
+//     myCenterX =500;
+//     myCenterY =375;
+//     if(Math.random()<0.25){
+//       myCenterX = Math.random()*201;  
+//     }
+
+//     else if(Math.random()<0.5){
+//       myCenterX = Math.random()*201+800;   
+//     }
+//     else if(Math.random()<0.75){
+//       myCenterY = Math.random()*151;
+//     }
+        
+//     else if (Math.random()<1){
+//       myCenterY = Math.random()*151+600;
+//     }
+   
+//     myPointDirection =0;
+//     myDirectionX = Math.random()*5-3;
+//     myDirectionY = Math.random()*5-3;
+
+//     asterRotation = (int)(Math.random()*15)-7;
+
+//   }
+
+//   public void setX(int x){myCenterX=x;}  
+//   public int getX(){return (int)myCenterX;}
+//   public void setY(int y){myCenterY=y;}   
+//   public int getY(){return (int)myCenterY;}   
+//   public void setDirectionX(double x){myDirectionX = x;}   
+//   public double getDirectionX(){return myDirectionX;}   
+//   public void setDirectionY(double y){myDirectionY = y;}   
+//   public double getDirectionY(){return myDirectionY;}   
+//   public void setPointDirection(int degrees){myPointDirection = degrees;}   
+//   public double getPointDirection(){return myPointDirection;}
+
+//   public void move(){
+
+//     rotate(asterRotation);
+//     super.move();
+      
+//     }
+// }
 
 
 
