@@ -1,6 +1,6 @@
 SpaceShip ship;
 Star[] starfield;
-//ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
+ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
 
 
 
@@ -12,15 +12,15 @@ public void setup()
   ship =new SpaceShip();
    
    starfield = new Star[1000];
-  for(int i=0; i<1000;i++){
+      for(int i=0; i<1000;i++){
     starfield[i] = new Star();
   }
 
-  // for (int i= 0; i<(int)(Math.random()*10+10); i++) {
+  for (int i= 0; i<(int)(Math.random()*10+10); i++) {
 
-  //   someAsteroids.add(new Asteroid());
+    someAsteroids.add(new Asteroid());
 }
-
+}
 
 public void draw() 
 {
@@ -34,14 +34,13 @@ public void draw()
   starfield[i].move();
   }
 
-  //for(int i=0; i<someAsteroids.size();i++){
-    // someAsteroids.get(i).show();
-    // someAsteroids.get(i).move();
+  for(int i=0; i<someAsteroids.size();i++){
+    someAsteroids.get(i).show();
+    someAsteroids.get(i).move();
       
 }
 
-
-
+}
 
 class SpaceShip extends Floater  
 {   
@@ -70,8 +69,8 @@ yCorners[5] = 7;
 
 
     //color
-    myColor = color(255,0,0);
-
+   // myColor = color(255,0,0);
+       myColor = color(255,255,128);
     //myCenter
     myCenterX = 500;
     myCenterY = 375;
@@ -107,14 +106,13 @@ public void keyPressed(){
  }
 
  if(key == ENTER){ 
+  //random location
   ship.setX((int)((Math.random())*1000)); 
   ship.getX();
   ship.setY((int)((Math.random())*1000));
   ship.getY();
+  //random direction
   ship.setPointDirection((int)((Math.random())*360)); 
-  //ship.setDirectionX(0);
-  //ship.setDirectionY(0);
-
 
   }
 }
@@ -128,63 +126,6 @@ public void keyReleased() {
 
 
 
-// class Asteroid extends Floater{
-
-//   private int asterRotation;
-//   public Asteroid(){
-
-//     corners=4;
-//     //change this according to graph paper
-//     int[] xS ={5,-15,-5,15};
-//     int[] xY ={5,15,-5,-15};
-//     xCorners = xS;
-//     yCorners = xY;
-
-//     myColor = color(128,128,128);
-
-//     myCenterX =500;
-//     myCenterY =375;
-//     if(Math.random()<0.25){
-//       myCenterX = Math.random()*201;  
-//     }
-
-//     else if(Math.random()<0.5){
-//       myCenterX = Math.random()*201+800;   
-//     }
-//     else if(Math.random()<0.75){
-//       myCenterY = Math.random()*151;
-//     }
-        
-//     else if (Math.random()<1){
-//       myCenterY = Math.random()*151+600;
-//     }
-   
-//     myPointDirection =0;
-//     myDirectionX = Math.random()*5-3;
-//     myDirectionY = Math.random()*5-3;
-
-//     asterRotation = (int)(Math.random()*15)-7;
-
-//   }
-
-//   public void setX(int x){myCenterX=x;}  
-//   public int getX(){return (int)myCenterX;}
-//   public void setY(int y){myCenterY=y;}   
-//   public int getY(){return (int)myCenterY;}   
-//   public void setDirectionX(double x){myDirectionX = x;}   
-//   public double getDirectionX(){return myDirectionX;}   
-//   public void setDirectionY(double y){myDirectionY = y;}   
-//   public double getDirectionY(){return myDirectionY;}   
-//   public void setPointDirection(int degrees){myPointDirection = degrees;}   
-//   public double getPointDirection(){return myPointDirection;}
-
-//   public void move(){
-
-//     rotate(asterRotation);
-//     super.move();
-      
-//     }
-// }
 
 
 
@@ -224,6 +165,106 @@ class Star
     }
   }
 }
+
+
+
+
+
+class Asteroid extends Floater{
+
+  private int asterRotation;
+  public Asteroid(){
+
+    corners=4;
+    //change this according to graph paper
+    int[] xS ={5,-15,-5,15};
+    int[] xY ={5,15,-5,-15};
+    xCorners = xS;
+    yCorners = xY;
+
+    myColor = color(128,128,128);
+
+    myCenterX =500;
+    myCenterY =375;
+    if(Math.random()<0.25){
+      myCenterX = Math.random()*201;  
+    }
+
+    else if(Math.random()<0.5){
+      myCenterX = Math.random()*201+800;   
+    }
+    else if(Math.random()<0.75){
+      myCenterY = Math.random()*151;
+    }
+        
+    else if (Math.random()<1){
+      myCenterY = Math.random()*151+600;
+    }
+   
+    myPointDirection =0;
+    myDirectionX = Math.random()*5-3;
+    myDirectionY = Math.random()*5-3;
+
+    asterRotation = (int)(Math.random()*15)-7;
+
+  }
+
+  public void setX(int x){myCenterX=x;}  
+  public int getX(){return (int)myCenterX;}
+  public void setY(int y){myCenterY=y;}   
+  public int getY(){return (int)myCenterY;}   
+  public void setDirectionX(double x){myDirectionX = x;}   
+  public double getDirectionX(){return myDirectionX;}   
+  public void setDirectionY(double y){myDirectionY = y;}   
+  public double getDirectionY(){return myDirectionY;}   
+  public void setPointDirection(int degrees){myPointDirection = degrees;}   
+  public double getPointDirection(){return myPointDirection;}
+
+  public void move(){
+
+    rotate(asterRotation);
+    super.move();
+      
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //NO TOUCHY TOUCHY
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
