@@ -175,10 +175,10 @@ class Asteroid extends Floater{
   private int asterRotation;
   public Asteroid(){
 
-    corners=4;
+    corners=12;
     //change this according to graph paper
-    int[] xS ={5,-15,-5,15};
-    int[] xY ={5,15,-5,-15};
+    int[] xS ={15,9,0,-5,-10,-14,-15,-10,-6,-1,9,14};
+    int[] xY ={0,7,10,9,6,2,-4,-7,-9,-10,-10,-5};
     xCorners = xS;
     yCorners = xY;
 
@@ -187,25 +187,25 @@ class Asteroid extends Floater{
     myCenterX =500;
     myCenterY =375;
     if(Math.random()<0.25){
-      myCenterX = Math.random()*201;  
+      myCenterX = Math.random()*300;  
     }
 
     else if(Math.random()<0.5){
-      myCenterX = Math.random()*201+800;   
+      myCenterX = Math.random()*300+700;   
     }
     else if(Math.random()<0.75){
-      myCenterY = Math.random()*151;
+      myCenterY = Math.random()*150;
     }
         
     else if (Math.random()<1){
-      myCenterY = Math.random()*151+600;
+      myCenterY = Math.random()*150+650;
     }
    
     myPointDirection =0;
-    myDirectionX = Math.random()*5-3;
-    myDirectionY = Math.random()*5-3;
+    myDirectionX = Math.random()*6-3;
+    myDirectionY = Math.random()*6-3;
 
-    asterRotation = (int)(Math.random()*15)-7;
+    asterRotation = (int)(Math.random()*18)-7;
 
   }
 
