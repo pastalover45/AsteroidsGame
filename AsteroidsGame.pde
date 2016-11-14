@@ -1,6 +1,6 @@
 SpaceShip ship;
 Star[] starfield;
-ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
+//ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
 
 
 
