@@ -1,8 +1,5 @@
 SpaceShip ship;
 Star[] starfield;
-//ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
-
-
 
 //your variable declarations here
 public void setup() 
