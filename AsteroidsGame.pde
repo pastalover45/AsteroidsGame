@@ -38,6 +38,11 @@ public void draw()
     someAsteroids.get(i).move();
       
 }
+ // for(int l=0;l<soMany.size();l++){
+ //    if(dist(soMany.get(l).getX(),soMany.get(l).getY(),yato.getX(),yato.getY())<12){
+ //      loseGame=true;
+ //    }
+
 
 }
 
@@ -69,7 +74,8 @@ yCorners[5] = 7;
 
     //color
    // myColor = color(255,0,0);
-       myColor = color(255,255,128);
+      //myColor = color(255,255,128);
+      myColor= color(30,144,255);
     //myCenter
     myCenterX = 500;
     myCenterY = 375;
