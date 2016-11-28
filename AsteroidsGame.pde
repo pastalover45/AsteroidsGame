@@ -1,7 +1,7 @@
 SpaceShip ship;
 Star[] starfield;
 ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
-
+boolean getsHit = false;
 
 //your variable declarations here
 public void setup() 
@@ -18,8 +18,9 @@ public void setup()
   for (int i= 0; i<(int)(Math.random()*10+10); i++) {
 
     someAsteroids.add(new Asteroid());
+    }
 }
-}
+
 
 public void draw() 
 {
@@ -38,13 +39,21 @@ public void draw()
     someAsteroids.get(i).move();
       
 }
- // for(int l=0;l<soMany.size();l++){
- //    if(dist(soMany.get(l).getX(),soMany.get(l).getY(),yato.getX(),yato.getY())<12){
- //      loseGame=true;
- //    }
-
-
+ for(int l=0;l<someAsteroids.size();l++){
+    if(dist(someAsteroids.get(l).getX(),someAsteroids.get(l).getY(),ship.getX(),ship.getY())<12){
+     //someAsteroids.remove(i);
+     getsHit=true;
+    }
+    
 }
+ for(int i=0;i<someAsteroids.size();i++){
+      if(dist(someAsteroids.get(i).getX(),someAsteroids.get(i).getY(),ship.getX(),ship.getY())<12){
+      someAsteroids.remove(i);
+      break;  
+}
+    }
+}
+
 
 class SpaceShip extends Floater  
 {   
@@ -74,8 +83,8 @@ yCorners[5] = 7;
 
     //color
    // myColor = color(255,0,0);
-      //myColor = color(255,255,128);
-      myColor= color(30,144,255);
+    //myColor = color(255,255,128);
+    myColor= color(30,144,255);
     //myCenter
     myCenterX = 500;
     myCenterY = 375;
@@ -120,6 +129,7 @@ public void keyPressed(){
   ship.setPointDirection((int)((Math.random())*360)); 
 
   }
+
 }
 
 public void keyReleased() {
