@@ -1,6 +1,8 @@
 SpaceShip ship;
 Star[] starfield;
 ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
+
+ArrayList<Bullet> bullet = new ArrayList<Bullet>();
 boolean getsHit = false;
 
 //your variable declarations here
@@ -41,19 +43,39 @@ public void draw()
 }
  for(int l=0;l<someAsteroids.size();l++){
     if(dist(someAsteroids.get(l).getX(),someAsteroids.get(l).getY(),ship.getX(),ship.getY())<12){
-     //someAsteroids.remove(i);
+     someAsteroids.remove(l);
      getsHit=true;
     }
     
+//}
+ // for(int i=0;i<someAsteroids.size();i++){
+ //      if(dist(someAsteroids.get(i).getX(),someAsteroids.get(i).getY(),ship.getX(),ship.getY())<12){
+ //      someAsteroids.remove(i);
+ //      //break;  
+ //        }
+
 }
- for(int i=0;i<someAsteroids.size();i++){
-      if(dist(someAsteroids.get(i).getX(),someAsteroids.get(i).getY(),ship.getX(),ship.getY())<12){
+  for(int a=0; a<bullet.size();a++){
+    bullet.get(a).show();
+    bullet.get(a).move();
+
+    if(bullet.get(a).getX()>750||bullet.get(a).getX()<0){
+      bullet.remove(a);
+    }
+
+    if(bullet.get(a).getY()>750||bullet.get(a).getY()<0){
+      bullet.remove(a);
+    }
+
+for(int i=0;i<someAsteroids.size();i++){
+      if(dist(someAsteroids.get(i).getX(),someAsteroids.get(i).getY(),bullet.get(a).getX(),bullet.get(a).getY())<10){
       someAsteroids.remove(i);
       break;  
+
 }
+      }
     }
 }
-
 
 
 class SpaceShip extends Floater  
@@ -130,16 +152,18 @@ public void keyPressed(){
   ship.setPointDirection((int)((Math.random())*360)); 
 
   }
-
+  
+  if(key == ' '){
+    bullet.add(new Bullet(ship));
+    }
 }
+
 
 public void keyReleased() {
 
   ship.setDirectionX(0);
   ship.setDirectionY(0);
 }
-
-
 
 
 
@@ -244,6 +268,10 @@ class Asteroid extends Floater{
 
 
 
+
+
+
+
 class Bullet extends Floater{
 
 private double dRadians; 
@@ -257,7 +285,7 @@ public Bullet(SpaceShip ship){
   xCorners = xS;
   yCorners = xY;
 
-  myColor = color(212,254,255);
+  myColor = color(255,0,0);
 
   myCenterX = ship.getX();
   myCenterY = ship.getY();
@@ -277,8 +305,8 @@ public void show ()
     fill(myColor);            
     ellipse((int)myCenterX,(int)myCenterY, 8,8);
     
-    fill(240,255,255,50);
-    ellipse((int)myCenterX,(int)myCenterY,15,15);
+   //fill(240,255,255,50);
+   // ellipse((int)myCenterX,(int)myCenterY,15,15);
    }  
 
   public void setX(int x){myCenterX=x;}  
@@ -295,9 +323,6 @@ public void show ()
 
 //}
 }
-
-
-
 
 
 
