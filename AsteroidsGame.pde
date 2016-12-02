@@ -1,7 +1,6 @@
 SpaceShip ship;
 Star[] starfield;
 ArrayList<Asteroid> someAsteroids = new ArrayList<Asteroid>();
-
 ArrayList<Bullet> bullet = new ArrayList<Bullet>();
 boolean getsHit = false;
 
@@ -46,15 +45,10 @@ public void draw()
      someAsteroids.remove(l);
      getsHit=true;
     }
-    
-//}
- // for(int i=0;i<someAsteroids.size();i++){
- //      if(dist(someAsteroids.get(i).getX(),someAsteroids.get(i).getY(),ship.getX(),ship.getY())<12){
- //      someAsteroids.remove(i);
- //      //break;  
- //        }
 
-}
+} 
+
+
   for(int a=0; a<bullet.size();a++){
     bullet.get(a).show();
     bullet.get(a).move();

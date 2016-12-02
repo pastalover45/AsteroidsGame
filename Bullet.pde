@@ -1,53 +1,52 @@
 //what am i suppose to do here
 
-class Bullet extends Floater{
+// class Bullet extends Floater{
 
-private double dRadians; 
+// private double dRadians; 
 
-public Bullet(SpaceShip ship){
+// public Bullet(SpaceShip ship){
 
  
-  corners=8;
-  int[] xS ={0,2,3, 2, 0,-2,-3,-2};
-  int[] xY ={3,2,0,-2,-3,-2, 0, 2};
-  xCorners = xS;
-  yCorners = xY;
+//   corners=8;
+//   int[] xS ={0,2,3, 2, 0,-2,-3,-2};
+//   int[] xY ={3,2,0,-2,-3,-2, 0, 2};
+//   xCorners = xS;
+//   yCorners = xY;
 
-  myColor = color(255,0,0);
+//   myColor = color(255,0,0);
 
-  myCenterX = ship.getX();
-  myCenterY = ship.getY();
+//   myCenterX = ship.getX();
+//   myCenterY = ship.getY();
     
-  myPointDirection =ship.getPointDirection();
-  double dRadians =myPointDirection*(Math.PI/180);
+//   myPointDirection =ship.getPointDirection();
+//   double dRadians =myPointDirection*(Math.PI/180);
 
-  myDirectionX = (5 *Math.cos(dRadians)) + ship.getDirectionX();
-  myDirectionY = (5 *Math.sin(dRadians)) + ship.getDirectionY();
+//   myDirectionX = (5 *Math.cos(dRadians)) + ship.getDirectionX();
+//   myDirectionY = (5 *Math.sin(dRadians)) + ship.getDirectionY();
 
-//AsteroidsGame.Floater.getX()
-  }
+// //AsteroidsGame.Floater.getX()
+//   }
 
-public void show () 
-   { 
-    noStroke();
-    fill(myColor);            
-    ellipse((int)myCenterX,(int)myCenterY, 8,8);
+// public void show () 
+//    { 
+//     noStroke();
+//     fill(myColor);            
+//     ellipse((int)myCenterX,(int)myCenterY, 8,8);
     
-   // fill(240,255,255,50);
-    //ellipse((int)myCenterX,(int)myCenterY,15,15);
-   }  
+//    // fill(240,255,255,50);
+//     //ellipse((int)myCenterX,(int)myCenterY,15,15);
+//    }  
 
-  public void setX(int x){myCenterX=x;}  
-  public int getX(){return (int)myCenterX;}
-  public void setY(int y){myCenterY=y;}   
-  public int getY(){return (int)myCenterY;}   
-  public void setDirectionX(double x){myDirectionX = x;}   
-  public double getDirectionX(){return myDirectionX;}   
-  public void setDirectionY(double y){myDirectionY = y;}   
-  public double getDirectionY(){return myDirectionY;}   
-  public void setPointDirection(int degrees){myPointDirection = degrees;}   
-  public double getPointDirection(){return myPointDirection;} 
+//   public void setX(int x){myCenterX=x;}  
+//   public int getX(){return (int)myCenterX;}
+//   public void setY(int y){myCenterY=y;}   
+//   public int getY(){return (int)myCenterY;}   
+//   public void setDirectionX(double x){myDirectionX = x;}   
+//   public double getDirectionX(){return myDirectionX;}   
+//   public void setDirectionY(double y){myDirectionY = y;}   
+//   public double getDirectionY(){return myDirectionY;}   
+//   public void setPointDirection(int degrees){myPointDirection = degrees;}   
+//   public double getPointDirection(){return myPointDirection;} 
 
-
-//}
-}
+// }
+// }
