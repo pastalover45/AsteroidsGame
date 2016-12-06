@@ -46,7 +46,8 @@ public void draw()
      getsHit=true;
     }
 
-} 
+    
+
 
 
   for(int a=0; a<bullet.size();a++){
@@ -67,6 +68,9 @@ for(int i=0;i<someAsteroids.size();i++){
       break;  
 
 }
+
+        }
+
       }
     }
 }
