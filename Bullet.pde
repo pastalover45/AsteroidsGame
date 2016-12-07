@@ -36,9 +36,6 @@ public void show ()
     fill(myColor);            
     ellipse((int)myCenterX,(int)myCenterY, 8,8);
     
-   //white glowy aura thing
-   // fill(240,255,255,50);
-   //  ellipse((int)myCenterX,(int)myCenterY,15,15);
    }  
 
   public void setX(int x){myCenterX=x;}  
